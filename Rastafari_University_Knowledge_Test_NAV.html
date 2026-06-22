@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastafari University Knowledge Test</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&amp;family=Arial:wght@400;700&amp;display=swap');
+        
+        :root {
+            --red: #ce1126;
+            --gold: #fcd116;
+            --green: #007a5e;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            background: #0a2f0a;
+            color: #f5e8c7;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(#8B0000, #006400);
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 8px solid #fcd116;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            color: #fcd116;
+            text-shadow: 2px 2px 4px #000;
+        }
+        
+        .header p {
+            margin: 8px 0 0;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        
+        .border-top, .border-bottom {
+            height: 12px;
+            background: repeating-linear-gradient(
+                to right,
+                #ce1126 0px, #ce1126 40px,
+                #fcd116 40px, #fcd116 80px,
+                #007a5e 80px, #007a5e 120px
+            );
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+        
+        .section {
+            background: #052e16;
+            border: 3px solid #fcd116;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #fcd116;
+            border-bottom: 3px solid #ce1126;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .wall-of-fame {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .artist-card {
+            background: #0a2f0a;
+            border: 3px solid #fcd116;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .artist-card h3 {
+            color: #fcd116;
+            margin: 10px 0 8px;
+            font-size: 1.4rem;
+        }
+        
+        .artist-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            color: #d4c4a8;
+        }
+        
+        .youtube-btn {
+            display: inline-block;
+            background: #ce1126;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-btn:hover {
+            background: #fcd116;
+            color: #8B0000;
+            transform: scale(1.05);
+        }
+        
+        .question {
+            background: #052e16;
+            border: 2px solid #fcd116;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .question h3 {
+            color: #fcd116;
+            margin-top: 0;
+        }
+        
+        .options label {
+            display: block;
+            background: #0a2f0a;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #007a5e;
+        }
+        
+        .options label:hover {
+            background: #1a4d1a;
+        }
+        
+        button {
+            background: #ce1126;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background: #fcd116;
+            color: #8B0000;
+        }
+        
+        .results {
+            background: #052e16;
+            border: 4px solid #fcd116;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .wrong-answer {
+            background: #3d1a1a;
+            border-left: 6px solid #ce1126;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+        }
+        
+        .certificate {
+            background: linear-gradient(#f5e8c7, #d4c4a8);
+            color: #0a2f0a;
+            padding: 40px 30px;
+            border: 12px solid #8B0000;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+        
+        .certificate h1 {
+            color: #8B0000;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Border -->
+<div class="border-top"></div>
+
+<header class="header">
+    <h1>🦁 RASTAFARI UNIVERSITY</h1>
+    <p>Official Knowledge Test • School of the Sacrament</p>
+</header>
+
+<div class="border-bottom"></div>
+
+<div class="container">
+
+    <!-- Introduction -->
+    <div class="section">
+        <h2>Welcome to the Rastafari University Knowledge Test</h2>
+        <p>This test was created to verify genuine knowledge of Rastafari livity, history, and culture. It draws from the teachings of reputable Rastafari institutions and elders.</p>
+        <p><strong>Pass rate: 90% (18 out of 20 correct)</strong></p>
+        <p>Upon passing, you will receive an official certificate recognizing you as a <strong>Certified Rastafari</strong>.</p>
+    </div>
+
+    <!-- Wall of Fame -->
+    <div class="section">
+        <h2>🌟 RASTAFARI WALL OF FAME</h2>
+        <p>These legendary artists carried the message of Rastafari to the world with integrity and massive impact.</p>
+        
+        <div class="wall-of-fame">
+            
+            <!-- Bob Marley -->
+            <div class="artist-card">
+                <h3>Bob Marley</h3>
+                <p>The King of Reggae who brought Rastafari to the global stage with love, truth, and powerful music.</p>
+                <a href="https://www.youtube.com/watch?v=IN0KkGeEURw" target="_blank" class="youtube-btn">Watch: One Love</a>
+            </div>
+            
+            <!-- Peter Tosh -->
+            <div class="artist-card">
+                <h3>Peter Tosh</h3>
+                <p>The Stepping Razor who fearlessly spoke truth and demanded justice through his music.</p>
+                <a href="https://www.youtube.com/watch?v=6cIePqdz03A" target="_blank" class="youtube-btn">Watch: Legalize It</a>
+            </div>
+            
+            <!-- Jimmy Cliff -->
+            <div class="artist-card">
+                <h3>Jimmy Cliff</h3>
+                <p>A pioneer who brought the message of struggle and hope through iconic soundtracks.</p>
+                <a href="https://www.youtube.com/watch?v=BpQrLUopf-k" target="_blank" class="youtube-btn">Watch: The Harder They Come</a>
+            </div>
+            
+            <!-- Toots Hibbert -->
+            <div class="artist-card">
+                <h3>Toots Hibbert</h3>
+                <p>The soulful voice of Toots & The Maytals who spread joy and conscious lyrics worldwide.</p>
+                <a href="https://www.youtube.com/watch?v=wNxNwvjzGM0" target="_blank" class="youtube-btn">Watch: 54-46 Was My Number</a>
+            </div>
+            
+            <!-- Burning Spear -->
+            <div class="artist-card">
+                <h3>Burning Spear</h3>
+                <p>The voice of Marcus Garvey’s teachings, keeping the fire of African redemption alive.</p>
+                <a href="https://www.youtube.com/watch?v=FROI6bS5Nvg" target="_blank" class="youtube-btn">Watch: Marcus Garvey</a>
+            </div>
+            
+            <!-- Ziggy Marley -->
+            <div class="artist-card">
+                <h3>Ziggy Marley</h3>
+                <p>Carrying the torch forward with conscious reggae and messages of love and unity.</p>
+                <a href="https://www.youtube.com/watch?v=hdbds86gyJo" target="_blank" class="youtube-btn">Watch: Love Is My Religion</a>
+            </div>
+            
+            <!-- Damian Marley -->
+            <div class="artist-card">
+                <h3>Damian "Jr. Gong" Marley</h3>
+                <p>Blending roots, dancehall, and hip-hop while staying true to the Rastafari foundation.</p>
+                <a href="https://www.youtube.com/watch?v=_GZlJGERbvE" target="_blank" class="youtube-btn">Watch: Welcome to Jamrock</a>
+            </div>
+            
+            <!-- Chronixx -->
+            <div class="artist-card">
+                <h3>Chronixx</h3>
+                <p>A new generation voice keeping the conscious flame burning bright in modern reggae.</p>
+                <a href="https://www.youtube.com/watch?v=LfeIfiiBTfY" target="_blank" class="youtube-btn">Watch: Here Comes Trouble</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Ital Food & Drink Section -->
+    <div class="section">
+        <h2>🌿 THE ITAL WAY – FOOD & DRINK</h2>
+        
+        <h2 style="text-align:center; font-size:2.3rem; color:#fcd116; margin:15px 0 20px; text-shadow: 2px 2px 4px #000;">ITAL IS VITAL!</h2>
+        
+        <p><strong>What is Ital?</strong><br>
+        Ital is the natural, life-giving way of eating in Rastafari. It is <strong>locally grown</strong>, <strong>strictly organic</strong>, and comes directly from the earth — fresh fruits, vegetables, herbs, grains, and coconut. Ital rejects industrial farming, chemical pesticides, and processed foods. It is prepared with love and respect for the body as the temple of Jah. <strong>No added sugar, no artificial flavours, no preservatives.</strong> It keeps the body clean, strong, and in perfect balance with nature and Jah.</p>
+        
+        <h3 style="color:#fcd116; margin-top:25px;">🍹 Ital Drinks (No Added Sugar)</h3>
+        
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:15px; margin-top:15px;">
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Ginger Beer</strong><br>
+                Fresh ginger, lemon, water, a touch of honey or dates (optional). Blend, strain, serve cold.
+            </div>
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Sorrel Drink</strong><br>
+                Dried sorrel (hibiscus), ginger, cinnamon, cloves, water. Steep overnight, strain, serve chilled.
+            </div>
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Pineapple & Coconut Water</strong><br>
+                Fresh pineapple blended with pure coconut water. Refreshing and full of enzymes.
+            </div>
+        </div>
+        
+        <h3 style="color:#fcd116; margin-top:30px;">🍲 Ital Foods (No Added Sugar)</h3>
+        
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:15px; margin-top:15px;">
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Ital Vegetable Stew</strong><br>
+                Pumpkin, carrot, potato, okra, callaloo, thyme, garlic, scotch bonnet, coconut milk. Simmer slow.
+            </div>
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Ackee & Callaloo</strong><br>
+                Sauté callaloo with onion, garlic, tomato, scotch bonnet. Add ackee at the end. Serve with roasted breadfruit.
+            </div>
+            
+            <div style="background:#0a2f0a; padding:15px; border-radius:10px; border:2px solid #007a5e;">
+                <strong>Coconut Run Down</strong><br>
+                Coconut milk reduced with pumpkin, carrot, green banana, okra, and herbs. Rich and satisfying.
+            </div>
+        </div>
+        
+        <p style="margin-top:20px; font-style:italic; color:#d4c4a8;">
+            "Let thy food be thy medicine and thy medicine be thy food." — Eat from the earth, give thanks, and keep it Ital.
+        </p>
+
+        <!-- New Rasta Cooking Video -->
+        <h3 style="color:#fcd116; margin-top:30px;">🎥 Watch &amp; Learn – Traditional Ital Cooking</h3>
+        
+        <div style="background:#0a2f0a; padding:20px; border-radius:12px; border:3px solid #007a5e; margin-top:15px; text-align:center;">
+            <strong>Rasta Ital Cooking – Authentic Recipes from the Roots</strong><br><br>
+            <p style="color:#d4c4a8; margin-bottom:15px;">Watch this beautiful demonstration of traditional Ital cooking straight from the heart of Rastafari livity.</p>
+            
+            <a href="https://www.youtube.com/watch?v=76HM8SFiDPo" target="_blank" 
+               style="display:inline-block; background:#ce1126; color:white; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:1.1rem;">
+                ▶️ WATCH THE ITAL COOKING VIDEO
+            </a>
+            
+            <p style="margin-top:15px; font-size:0.9rem; color:#d4c4a8;">
+                No added sugar • 100% natural • Prepared with love &amp; respect
+            </p>
+        </div>
+    </div>
+
+    <!-- Official Knowledge Resources -->
+    <div class="section">
+        <h2>📚 OFFICIAL KNOWLEDGE RESOURCES</h2>
+        <p>Deepen your understanding with trusted sources from the global Rastafari community.</p>
+        
+        <h3 style="color:#fcd116; margin-top:20px;">📖 Wikipedia – Trusted Knowledge Base</h3>
+        <ul style="margin-top:10px; line-height:2; padding-left:20px;">
+            <li><a href="https://en.wikipedia.org/wiki/Rastafari" target="_blank" style="color:#fcd116; text-decoration:underline;">Rastafari Movement</a> – The complete overview of the faith, beliefs, and culture</li>
+            <li><a href="https://en.wikipedia.org/wiki/History_of_Rastafari" target="_blank" style="color:#fcd116; text-decoration:underline;">History of Rastafari</a> – How the movement began in Jamaica and spread worldwide</li>
+            <li><a href="https://en.wikipedia.org/wiki/Haile_Selassie" target="_blank" style="color:#fcd116; text-decoration:underline;">Haile Selassie I</a> – The central figure, King of Kings, and living example of divinity</li>
+            <li><a href="https://en.wikipedia.org/wiki/Ital" target="_blank" style="color:#fcd116; text-decoration:underline;">Ital</a> – The natural, life-giving way of eating and living</li>
+        </ul>
+        
+        <h3 style="color:#fcd116; margin-top:25px;">🎥 Certified Rasta Documentary</h3>
+        <div style="background:#0a2f0a; padding:20px; border-radius:12px; border:3px solid #007a5e; margin-top:15px;">
+            <strong>"What is Rasta?" – Educational Documentary</strong><br><br>
+            A clear and powerful introduction to the true meaning of Rastafari — its origins, beliefs, livity, and the spiritual foundation that guides I &amp; I.<br><br>
+            <a href="https://www.youtube.com/watch?v=M5DftV_n1wQ" target="_blank" 
+               style="display:inline-block; background:#ce1126; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.05rem;">
+                ▶️ WATCH THE DOCUMENTARY
+            </a>
+            <p style="margin-top:12px; font-size:0.9rem; color:#d4c4a8;">Highly recommended for anyone seeking deeper understanding.</p>
+        </div>
+    </div>
+
+    <!-- Founder & His Message -->
+    <div class="section">
+        <h2>❤️💛💚 THE FOUNDER & HIS MESSAGE</h2>
+        
+        <div style="background:#0a2f0a; border:3px solid #fcd116; border-radius:12px; padding:25px; margin-top:15px;">
+            <h3 style="color:#ce1126; margin-top:0;">Marcus Mosiah Garvey (1887 – 1940)</h3>
+            <p><strong>The Prophet • The Visionary • The Father of Black Nationalism</strong></p>
+            
+            <p style="margin-top:15px;">
+                Marcus Garvey was a Jamaican-born visionary who founded the Universal Negro Improvement Association (UNIA). 
+                He is revered in Rastafari as the great prophet who prepared the way for the return of the Messiah.
+            </p>
+            
+            <h4 style="color:#fcd116; margin-top:20px;">His Sacred Message to the World:</h4>
+            <ul style="padding-left:20px; line-height:1.8;">
+                <li><strong>“Africa for the Africans, at home and abroad!”</strong> — The call for Black self-determination and repatriation.</li>
+                <li><strong>“Look to the East for the crowning of a Black King”</strong> — The prophecy fulfilled in 1930 with the coronation of Emperor Haile Selassie I.</li>
+                <li><strong>“Emancipate yourselves from mental slavery”</strong> — A call for mental and spiritual liberation (later immortalised by Bob Marley).</li>
+                <li><strong>Black pride, self-reliance, and economic independence</strong> — “Up, you mighty race, you can accomplish what you will!”</li>
+            </ul>
+            
+            <p style="margin-top:20px; font-style:italic; color:#d4c4a8;">
+                Garvey’s vision of Black dignity, African redemption, and the coming of a Black Messiah laid the spiritual and ideological foundation for the Rastafari movement. 
+                His words continue to guide I & I today.
+            </p>
+        </div>
+    </div>
+
+    <!-- The Test -->
+    <div class="section">
+        <h2>📝 THE KNOWLEDGE TEST</h2>
+        <p>Answer all 20 questions. You need at least 18 correct to pass.</p>
+        
+        <form id="testForm">
+            <!-- Questions will be inserted by JavaScript -->
+            <div id="questionsContainer"></div>
+            
+            <button type="button" onclick="submitTest()">SUBMIT TEST</button>
+        </form>
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultsSection" class="results" style="display: none;">
+        <h2>Your Results</h2>
+        <div id="scoreDisplay"></div>
+        <div id="wrongAnswersList"></div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="retakeTest()">RETAKE TEST</button>
+            <button onclick="showCertificate()" id="certificateBtn" style="display: none;">GET YOUR CERTIFICATE</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Certificate Modal -->
+<div id="certificateModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; overflow-y: auto;">
+    <div class="certificate">
+        <h1>🏆 CERTIFICATE OF ACHIEVEMENT</h1>
+        <p style="font-size: 1.3rem; margin: 10px 0;">This is to certify that</p>
+        <input type="text" id="nameInput" placeholder="Enter Your Name" style="font-size: 1.8rem; padding: 10px; width: 80%; text-align: center; border: 3px solid #8B0000; border-radius: 8px; margin: 15px 0;">
+        
+        <h2 style="color: #8B0000; font-size: 2rem; margin: 15px 0;">has successfully passed the</h2>
+        <h2 style="color: #8B0000; font-size: 1.8rem;">Rastafari University Knowledge Test</h2>
+        <p style="font-size: 1.2rem;">with a score of <strong>90% or higher</strong></p>
+        <p style="margin-top: 20px;">and is hereby recognized as a</p>
+        <h2 style="color: #ce1126; font-size: 2.2rem;">CERTIFIED RASTAFARI</h2>
+        
+        <p style="margin-top: 30px;">Date: <span id="certDate"></span></p>
+        
+        <div style="margin-top: 30px;">
+            <button onclick="printCertificate()">PRINT CERTIFICATE</button>
+            <button onclick="closeCertificate()">CLOSE</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// 20 Questions
+const questions = [
+    {
+        q: "1. What does the term 'I & I' represent in Rastafari?",
+        options: [
+            "A. Only the individual person",
+            "B. The unity of the individual with Jah and all creation",
+            "C. A type of Ital food",
+            "D. A Nyabinghi drum rhythm"
+        ],
+        correct: 1
+    },
+    {
+        q: "2. Who is regarded as the founder of the Rastafari movement?",
+        options: [
+            "A. Haile Selassie I",
+            "B. Marcus Garvey",
+            "C. Leonard Howell",
+            "D. Bob Marley"
+        ],
+        correct: 2
+    },
+    {
+        q: "3. What does the colour Red represent in the Rastafari flag?",
+        options: [
+            "A. The blood of the martyrs and the struggle for liberation",
+            "B. The vegetation of Africa",
+            "C. The wealth of the land",
+            "D. The sky and the heavens"
+        ],
+        correct: 0
+    },
+    {
+        q: "4. What is 'Ital' in Rastafari livity?",
+        options: [
+            "A. A style of music",
+            "B. Natural, plant-based, chemical-free living and eating",
+            "C. A type of prayer",
+            "D. A dreadlock style"
+        ],
+        correct: 1
+    },
+    {
+        q: "5. Which Ethiopian Emperor is seen as the returned Messiah by Rastafari?",
+        options: [
+            "A. Menelik II",
+            "B. Haile Selassie I",
+            "C. Tewodros II",
+            "D. Yohannes IV"
+        ],
+        correct: 1
+    },
+    {
+        q: "6. What does 'Babylon' symbolize in Rastafari?",
+        options: [
+            "A. A beautiful city in Africa",
+            "B. The oppressive system of Western society and colonialism",
+            "C. A type of drum",
+            "D. A Rastafari mansion"
+        ],
+        correct: 1
+    },
+    {
+        q: "7. What is 'Grounation Day'?",
+        options: [
+            "A. A celebration of Ethiopian New Year",
+            "B. The day Haile Selassie I visited Jamaica in 1966",
+            "C. Bob Marley's birthday",
+            "D. A Nyabinghi gathering"
+        ],
+        correct: 1
+    },
+    {
+        q: "8. Which mansion is known for its strict Ital diet and rejection of modern technology?",
+        options: [
+            "A. Nyabinghi",
+            "B. Bobo Shanti",
+            "C. Twelve Tribes of Israel",
+            "D. Ethiopian Orthodox"
+        ],
+        correct: 1
+    },
+    {
+        q: "9. What does the Lion of Judah symbolize?",
+        options: [
+            "A. Strength, royalty, and the lineage of Haile Selassie",
+            "B. A type of food",
+            "C. A drum rhythm",
+            "D. A prayer chant"
+        ],
+        correct: 0
+    },
+    {
+        q: "10. Who said 'Africa for the Africans, at home and abroad'?",
+        options: [
+            "A. Haile Selassie I",
+            "B. Marcus Garvey",
+            "C. Bob Marley",
+            "D. Peter Tosh"
+        ],
+        correct: 1
+    },
+    {
+        q: "11. What is the significance of dreadlocks in Rastafari?",
+        options: [
+            "A. A fashion statement",
+            "B. A spiritual covenant and natural expression of the Nazarite vow",
+            "C. A requirement for all Rastas",
+            "D. Only for musicians"
+        ],
+        correct: 1
+    },
+    {
+        q: "12. What does 'Zion' represent?",
+        options: [
+            "A. A place in Jamaica",
+            "B. The promised land of Africa / spiritual home and liberation",
+            "C. A type of herb",
+            "D. A drum"
+        ],
+        correct: 1
+    },
+    {
+        q: "13. Which Nyabinghi chant is commonly used in reasoning sessions?",
+        options: [
+            "A. 'One Love'",
+            "B. 'Jah Rastafari'",
+            "C. 'Blood and Fire'",
+            "D. 'Rasta Man Vibration'"
+        ],
+        correct: 1
+    },
+    {
+        q: "14. What is the role of the 'Reasoning' in Rastafari?",
+        options: [
+            "A. A form of debate",
+            "B. A spiritual discussion and sharing of knowledge in a circle",
+            "C. A type of music session",
+            "D. A cooking method"
+        ],
+        correct: 1
+    },
+    {
+        q: "15. Which book is considered sacred alongside the Bible in many Rastafari circles?",
+        options: [
+            "A. The Quran",
+            "B. The Kebra Nagast",
+            "C. The Torah",
+            "D. The Bhagavad Gita"
+        ],
+        correct: 1
+    },
+    {
+        q: "16. What does 'overstanding' mean in Rastafari language?",
+        options: [
+            "A. To be above someone",
+            "B. Deep spiritual understanding and insight",
+            "C. To win an argument",
+            "D. To be physically tall"
+        ],
+        correct: 1
+    },
+    {
+        q: "17. Which artist helped popularize the message of repatriation?",
+        options: [
+            "A. Chronixx",
+            "B. Burning Spear",
+            "C. Damian Marley",
+            "D. Ziggy Marley"
+        ],
+        correct: 1
+    },
+    {
+        q: "18. What is the meaning of 'Jah'?",
+        options: [
+            "A. A Jamaican greeting",
+            "B. The name of God / the Most High",
+            "C. A type of food",
+            "D. A drum pattern"
+        ],
+        correct: 1
+    },
+    {
+        q: "19. Which mansion is known for wearing turbans and following a strict code?",
+        options: [
+            "A. Nyabinghi",
+            "B. Bobo Shanti",
+            "C. Twelve Tribes",
+            "D. Ethiopian Zion Coptic Church"
+        ],
+        correct: 1
+    },
+    {
+        q: "20. What is the ultimate goal of Rastafari according to most teachings?",
+        options: [
+            "A. To become rich and famous",
+            "B. Repatriation to Africa and spiritual liberation from Babylon",
+            "C. To convert everyone to Christianity",
+            "D. To create a new religion"
+        ],
+        correct: 1
+    }
+];
+
+let userAnswers = [];
+
+function loadQuestions() {
+    const container = document.getElementById('questionsContainer');
+    container.innerHTML = '';
+    
+    questions.forEach((question, index) => {
+        const div = document.createElement('div');
+        div.className = 'question';
+        div.innerHTML = `
+            <h3>${question.q}</h3>
+            <div class="options">
+                ${question.options.map((option, i) => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${i}">
+                        ${option}
+                    </label>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+function submitTest() {
+    userAnswers = [];
+    let score = 0;
+    
+    questions.forEach((question, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected) {
+            const answer = parseInt(selected.value);
+            userAnswers.push(answer);
+            if (answer === question.correct) {
+                score++;
+            }
+        } else {
+            userAnswers.push(-1); // No answer
+        }
+    });
+    
+    const percentage = Math.round((score / questions.length) * 100);
+    const passed = score >= 18;
+    
+    showResults(score, percentage, passed);
+}
+
+function showResults(score, percentage, passed) {
+    const resultsSection = document.getElementById('resultsSection');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const wrongList = document.getElementById('wrongAnswersList');
+    
+    resultsSection.style.display = 'block';
+    
+    scoreDisplay.innerHTML = `
+        <h3 style="font-size: 2rem; color: #fcd116;">Your Score: ${score} / 20 (${percentage}%)</h3>
+        <p style="font-size: 1.3rem; color: ${passed ? '#007a5e' : '#ce1126'};">
+            ${passed ? '🎉 CONGRATULATIONS! You have passed!' : 'Keep studying and try again. You need 18/20 to pass.'}
+        </p>
+    `;
+    
+    // Show wrong answers
+    wrongList.innerHTML = '<h3>Review of Incorrect Answers:</h3>';
+    
+    let hasWrong = false;
+    
+    questions.forEach((question, index) => {
+        const userAnswer = userAnswers[index];
+        if (userAnswer !== question.correct) {
+            hasWrong = true;
+            const wrongDiv = document.createElement('div');
+            wrongDiv.className = 'wrong-answer';
+            wrongDiv.innerHTML = `
+                <strong>Question ${index + 1}:</strong> ${question.q}<br><br>
+                <span style="color: #ce1126;">Your answer:</span> ${userAnswer === -1 ? 'No answer selected' : question.options[userAnswer]}<br>
+                <span style="color: #fcd116;">Correct answer:</span> ${question.options[question.correct]}
+            `;
+            wrongList.appendChild(wrongDiv);
+        }
+    });
+    
+    if (!hasWrong) {
+        wrongList.innerHTML = '<p style="color: #007a5e; font-size: 1.2rem;">Perfect score! You got every question correct. Well done!</p>';
+    }
+    
+    // Show certificate button if passed
+    if (passed) {
+        document.getElementById('certificateBtn').style.display = 'inline-block';
+    }
+}
+
+function retakeTest() {
+    document.getElementById('resultsSection').style.display = 'none';
+    document.getElementById('certificateBtn').style.display = 'none';
+    window.scrollTo(0, 0);
+}
+
+function showCertificate() {
+    const modal = document.getElementById('certificateModal');
+    const dateSpan = document.getElementById('certDate');
+    
+    const today = new Date();
+    dateSpan.textContent = today.toLocaleDateString('en-GB', { 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    });
+    
+    modal.style.display = 'block';
+}
+
+function printCertificate() {
+    const name = document.getElementById('nameInput').value || 'Beloved Student';
+    const modalContent = document.querySelector('#certificateModal .certificate');
+    
+    // Create a clean print version
+    const printWindow = window.open('', '', 'height=700,width=900');
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>Rastafari University Certificate</title>
+            <style>
+                body { font-family: Georgia, serif; text-align: center; padding: 40px; background: #f5e8c7; color: #0a2f0a; }
+                h1 { color: #8B0000; font-size: 2.8rem; }
+                .name { font-size: 2.2rem; font-weight: bold; margin: 20px 0; color: #ce1126; }
+                .border { border: 8px solid #8B0000; padding: 40px; margin: 30px auto; max-width: 700px; }
+            </style>
+        </head>
+        <body>
+            <div class="border">
+                <h1>🏆 CERTIFICATE OF ACHIEVEMENT</h1>
+                <p style="font-size: 1.4rem;">This is to certify that</p>
+                <div class="name">${name}</div>
+                <h2 style="color: #8B0000;">has successfully passed the<br>Rastafari University Knowledge Test</h2>
+                <p style="font-size: 1.3rem;">with a score of 90% or higher</p>
+                <h2 style="color: #ce1126; font-size: 2rem;">and is hereby recognized as a<br>CERTIFIED RASTAFARI</h2>
+                <p style="margin-top: 40px;">Date: ${document.getElementById('certDate').textContent}</p>
+                <p style="margin-top: 30px; font-style: italic;">One Love • Jah Bless</p>
+            </div>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+        printWindow.print();
+    }, 500);
+}
+
+function closeCertificate() {
+    document.getElementById('certificateModal').style.display = 'none';
+}
+
+// Initialize
+window.onload = function() {
+    loadQuestions();
+};
+</script>
+
+</body>
+</html>
