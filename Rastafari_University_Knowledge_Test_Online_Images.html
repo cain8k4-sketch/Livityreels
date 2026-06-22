@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RASTAFARI UNIVERSITY • OFFICIAL KNOWLEDGE TEST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+        
+        body {
+            background: #052e16;
+            color: #f5f5dc;
+            font-family: 'Press Start 2P', system-ui, -apple-system, sans-serif;
+        }
+        
+        .rasta-stripe-horizontal {
+            background: linear-gradient(
+                to right,
+                #ce1126 0%,
+                #ce1126 33.333%,
+                #fcd116 33.333%,
+                #fcd116 66.666%,
+                #007a5e 66.666%,
+                #007a5e 100%
+            );
+            box-shadow: 
+                0 4px 15px rgba(206, 17, 38, 0.7),
+                0 0 25px rgba(252, 209, 22, 0.5);
+            height: 14px;
+        }
+        
+        .pixel-card {
+            background: #112211;
+            border: 4px solid #00ff9d;
+            box-shadow: 0 0 0 6px #ffd700;
+            transition: transform 0.1s;
+        }
+        
+        .pixel-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 6px #ffd700, 0 0 25px rgba(0, 255, 157, 0.6);
+        }
+        
+        .section-title {
+            text-shadow: 0 0 10px #ffd700;
+        }
+        
+        .modal {
+            animation: fadeInScale 0.2s ease-out forwards;
+        }
+        
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .question-card {
+            transition: all 0.2s ease;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+        }
+        
+        .option {
+            transition: all 0.1s ease;
+        }
+        
+        .option:hover {
+            background-color: #1a3a1a;
+            transform: translateX(4px);
+        }
+        
+        .option.selected {
+            background-color: #14532d;
+            border-color: #fcd116;
+        }
+        
+        .result-correct {
+            background-color: #052e16;
+            border-color: #22c55e;
+        }
+        
+        .result-wrong {
+            background-color: #3f1a1a;
+            border-color: #ef4444;
+        }
+        
+        .certificate {
+            background: linear-gradient(135deg, #052e16 0%, #112211 100%);
+            border: 8px solid #fcd116;
+            box-shadow: 0 0 0 12px #ce1126, 0 0 0 20px #007a5e;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Top Border -->
+    <div class="rasta-stripe-horizontal w-full"></div>
+    
+    <!-- Header -->
+    <header class="max-w-5xl mx-auto px-6 py-8 text-center">
+        <div class="flex justify-center mb-4">
+            <div class="text-6xl">🦁</div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black tracking-tighter mb-2">
+            RASTAFARI UNIVERSITY
+        </h1>
+        <p class="text-xl text-amber-300">SCHOOL OF THE SACRAMENT • I &amp; I KNOWLEDGE</p>
+        <div class="mt-4 inline-block px-6 py-2 bg-red-900 text-red-200 text-sm tracking-[3px]">
+            OFFICIAL KNOWLEDGE TEST • 2026
+        </div>
+    </header>
+    
+    <!-- Hero / Intro -->
+    <div class="max-w-4xl mx-auto px-6 pb-12">
+        <div class="bg-zinc-900 border-4 border-amber-400 p-8 text-center">
+            <h2 class="text-2xl mb-4">WHY THIS TEST EXISTS</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Too many people claim to be Rastafari without understanding the depth of the livity, the history, the philosophy, and the spiritual foundation.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+                This test was created to separate surface-level knowledge from real understanding. 
+                It draws from the teachings of reputable Rastafari institutions and elders.
+            </p>
+            <p class="text-xl font-bold text-amber-400">
+                Pass with 90% (18/20) and you become a <span class="text-white">CERTIFIED RASTAFARI</span>.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Wall of Fame -->
+    <div class="max-w-6xl mx-auto px-6 pb-16">
+        <h2 class="text-center text-3xl mb-8 section-title">RASTAFARI WALL OF FAME</h2>
+        <p class="text-center text-amber-300 mb-8 max-w-2xl mx-auto">Legends who carried the message to the world stage</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <!-- Bob Marley -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Bob_Marley.jpg/440px-Bob_Marley.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Bob Marley">
+                <h3 class="font-bold text-lg">BOB MARLEY</h3>
+                <p class="text-xs text-amber-400 mb-3">The King of Reggae • One Love</p>
+                <a href="https://www.youtube.com/watch?v=IN0KkGeEURw" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH ONE LOVE</a>
+            </div>
+            
+            <!-- Peter Tosh -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Peter_Tosh.jpg/440px-Peter_Tosh.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Peter Tosh">
+                <h3 class="font-bold text-lg">PETER TOSH</h3>
+                <p class="text-xs text-amber-400 mb-3">Legalize It • Steppin' Razor</p>
+                <a href="https://www.youtube.com/watch?v=6cIePqdz03A" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH LEGALIZE IT</a>
+            </div>
+            
+            <!-- Jimmy Cliff -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Jimmy_Cliff.jpg/440px-Jimmy_Cliff.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Jimmy Cliff">
+                <h3 class="font-bold text-lg">JIMMY CLIFF</h3>
+                <p class="text-xs text-amber-400 mb-3">The Harder They Come</p>
+                <a href="https://www.youtube.com/watch?v=BpQrLUopf-k" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH THE HARDER THEY COME</a>
+            </div>
+            
+            <!-- Toots Hibbert -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toots_Hibbert.jpg/440px-Toots_Hibbert.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Toots Hibbert">
+                <h3 class="font-bold text-lg">TOOTS HIBBERT</h3>
+                <p class="text-xs text-amber-400 mb-3">54-46 Was My Number</p>
+                <a href="https://www.youtube.com/watch?v=wNxNwvjzGM0" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH 54-46</a>
+            </div>
+            
+            <!-- Burning Spear -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Burning_Spear.jpg/440px-Burning_Spear.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Burning Spear">
+                <h3 class="font-bold text-lg">BURNING SPEAR</h3>
+                <p class="text-xs text-amber-400 mb-3">Marcus Garvey</p>
+                <a href="https://www.youtube.com/watch?v=FROI6bS5Nvg" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH MARCUS GARVEY</a>
+            </div>
+            
+            <!-- Ziggy Marley -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ziggy_Marley.jpg/440px-Ziggy_Marley.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Ziggy Marley">
+                <h3 class="font-bold text-lg">ZIGGY MARLEY</h3>
+                <p class="text-xs text-amber-400 mb-3">Love Is My Religion</p>
+                <a href="https://www.youtube.com/watch?v=hdbds86gyJo" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH LOVE IS MY RELIGION</a>
+            </div>
+            
+            <!-- Damian Marley -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Damian_Marley.jpg/440px-Damian_Marley.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Damian Marley">
+                <h3 class="font-bold text-lg">DAMIAN "JR. GONG" MARLEY</h3>
+                <p class="text-xs text-amber-400 mb-3">Welcome to Jamrock</p>
+                <a href="https://www.youtube.com/watch?v=_GZlJGERbvE" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH WELCOME TO JAMROCK</a>
+            </div>
+            
+            <!-- Chronixx -->
+            <div class="pixel-card p-4 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chronixx.jpg/440px-Chronixx.jpg" 
+                     class="w-full h-40 object-cover mb-3 border-2 border-amber-400" alt="Chronixx">
+                <h3 class="font-bold text-lg">CHRONIXX</h3>
+                <p class="text-xs text-amber-400 mb-3">Here Comes Trouble</p>
+                <a href="https://www.youtube.com/watch?v=LfeIfiiBTfY" target="_blank"
+                   class="inline-block bg-red-700 hover:bg-red-600 px-4 py-2 text-xs font-bold">WATCH HERE COMES TROUBLE</a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Start Test Button -->
+    <div class="max-w-4xl mx-auto px-6 pb-16 text-center">
+        <button onclick="startTest()"
+                class="bg-amber-400 hover:bg-amber-300 text-black font-black text-2xl px-12 py-6 rounded-none border-4 border-black shadow-[6px_6px_0px_0px_#000]">
+            START THE TEST
+        </button>
+        <p class="mt-4 text-sm text-amber-400">20 Questions • 90% to Pass • Certificate on Completion</p>
+    </div>
+    
+    <!-- Test Section -->
+    <div id="test-section" class="hidden max-w-4xl mx-auto px-6 pb-16">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <span class="text-sm text-amber-400">QUESTION</span>
+                <span id="question-number" class="text-4xl font-black ml-2">1</span>
+                <span class="text-2xl text-amber-600">/20</span>
+            </div>
+            <div class="text-right">
+                <div class="text-sm text-amber-400">SCORE</div>
+                <div id="score-display" class="text-3xl font-black text-amber-400">0/20</div>
+            </div>
+        </div>
+        
+        <div id="question-container" class="bg-zinc-900 border-4 border-amber-400 p-8 mb-6">
+            <h3 id="question-text" class="text-xl leading-tight mb-8"></h3>
+            
+            <div id="options-container" class="space-y-3"></div>
+        </div>
+        
+        <div class="flex gap-4">
+            <button onclick="nextQuestion()" id="next-btn"
+                    class="flex-1 bg-emerald-600 hover:bg-emerald-500 py-4 font-bold text-lg disabled:opacity-50">
+                NEXT QUESTION
+            </button>
+            <button onclick="submitTest()" id="submit-btn"
+                    class="flex-1 bg-red-700 hover:bg-red-600 py-4 font-bold text-lg hidden">
+                SUBMIT TEST
+            </button>
+        </div>
+    </div>
+    
+    <!-- Results Section -->
+    <div id="results-section" class="hidden max-w-4xl mx-auto px-6 pb-16">
+        <div class="bg-zinc-900 border-4 border-amber-400 p-8 text-center">
+            <h2 class="text-4xl mb-4">TEST COMPLETE</h2>
+            
+            <div id="score-circle" class="mx-auto w-40 h-40 rounded-full border-8 border-amber-400 flex items-center justify-center mb-6">
+                <div>
+                    <div id="final-score" class="text-6xl font-black"></div>
+                    <div class="text-sm text-amber-400">OUT OF 20</div>
+                </div>
+            </div>
+            
+            <div id="pass-fail-message" class="text-3xl font-bold mb-8"></div>
+            
+            <!-- Wrong Answers Review -->
+            <div id="wrong-answers-review" class="hidden text-left mb-8">
+                <h3 class="text-xl mb-4 text-center">QUESTIONS YOU GOT WRONG:</h3>
+                <div id="wrong-answers-list" class="space-y-4"></div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="restartTest()" 
+                        class="px-10 py-4 bg-zinc-800 hover:bg-zinc-700 font-bold">
+                    RETAKE TEST
+                </button>
+                <button onclick="showCertificate()" id="certificate-btn"
+                        class="px-10 py-4 bg-amber-400 hover:bg-amber-300 text-black font-bold hidden">
+                    GET YOUR CERTIFICATE
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" onclick="if (event.target.id === 'certificate-modal') hideCertificate()" 
+         class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-6">
+        <div onclick="event.stopImmediatePropagation()" class="certificate max-w-2xl w-full p-12 text-center">
+            <div class="text-6xl mb-4">🦁</div>
+            <h2 class="text-4xl tracking-[4px] mb-2">RASTAFARI UNIVERSITY</h2>
+            <p class="text-amber-400 mb-8">SCHOOL OF THE SACRAMENT</p>
+            
+            <div class="my-10">
+                <p class="text-sm tracking-[3px]">THIS CERTIFIES THAT</p>
+                <input type="text" id="certificate-name" placeholder="YOUR NAME HERE" 
+                       class="bg-transparent border-b-2 border-amber-400 text-center text-4xl py-2 w-full focus:outline-none">
+                <p class="mt-4 text-xl">HAS SUCCESSFULLY COMPLETED THE</p>
+                <p class="text-3xl font-bold mt-2">OFFICIAL RASTAFARI KNOWLEDGE TEST</p>
+            </div>
+            
+            <p class="text-sm">AND IS HEREBY RECOGNISED AS A</p>
+            <p class="text-4xl font-black text-amber-400 my-2">CERTIFIED RASTAFARI</p>
+            
+            <div class="mt-10 text-xs tracking-widest">
+                DATE: <span id="cert-date"></span><br>
+                CERTIFICATE NO: RU-<span id="cert-number"></span>
+            </div>
+            
+            <div class="flex gap-4 mt-10">
+                <button onclick="printCertificate()" 
+                        class="flex-1 py-4 bg-amber-400 text-black font-bold">PRINT / SAVE AS PDF</button>
+                <button onclick="hideCertificate()" 
+                        class="flex-1 py-4 bg-zinc-800 font-bold">CLOSE</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Border -->
+    <div class="rasta-stripe-horizontal w-full mt-12"></div>
+    
+    <footer class="text-center py-8 text-xs text-amber-700">
+        RASTAFARI UNIVERSITY • SCHOOL OF THE SACRAMENT • ONE LOVE • 2026
+    </footer>
+    
+    <script>
+        // 20 Questions - Real Rastafari Knowledge
+        const questions = [
+            {
+                q: "What does the term 'I & I' represent in Rastafari philosophy?",
+                options: [
+                    "A way of saying 'you and me'",
+                    "The unity of the individual with Jah (God)",
+                    "A greeting used only in Jamaica",
+                    "The name of a famous reggae song"
+                ],
+                correct: 1
+            },
+            {
+                q: "Who is considered the central figure and divine incarnation in Rastafari?",
+                options: [
+                    "Marcus Garvey",
+                    "Haile Selassie I",
+                    "Bob Marley",
+                    "King Solomon"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does the colour Gold represent in the Rastafari flag?",
+                options: [
+                    "The blood of the martyrs",
+                    "The wealth of Africa and the sun",
+                    "The vegetation of the land",
+                    "The sky and the sea"
+                ],
+                correct: 1
+            },
+            {
+                q: "What is 'Ital' in Rastafari livity?",
+                options: [
+                    "A type of music",
+                    "Natural, plant-based, chemical-free food",
+                    "A religious ceremony",
+                    "A style of clothing"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which date is celebrated as Grounation Day?",
+                options: [
+                    "April 21 (Haile Selassie's visit to Jamaica)",
+                    "July 23 (Haile Selassie's birthday)",
+                    "November 2 (Marcus Garvey's birthday)",
+                    "February 6 (Bob Marley's birthday)"
+                ],
+                correct: 0
+            },
+            {
+                q: "What does 'Babylon' symbolise in Rastafari?",
+                options: [
+                    "A city in ancient times",
+                    "The corrupt system of oppression and colonialism",
+                    "A type of music",
+                    "A Rastafari mansion"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which mansion of Rastafari is known for its strict Nyabinghi order?",
+                options: [
+                    "Twelve Tribes of Israel",
+                    "Bobo Shanti",
+                    "Nyabinghi",
+                    "Ethiopian Orthodox"
+                ],
+                correct: 2
+            },
+            {
+                q: "What is the significance of dreadlocks in Rastafari?",
+                options: [
+                    "A fashion statement",
+                    "A spiritual covenant and rejection of Babylon's vanity",
+                    "A requirement for all Rastafari",
+                    "Only for musicians"
+                ],
+                correct: 1
+            },
+            {
+                q: "Who is known as the 'Prophet' who foretold the crowning of Haile Selassie?",
+                options: [
+                    "Marcus Garvey",
+                    "Leonard Howell",
+                    "Joseph Hibbert",
+                    "Archibald Dunkley"
+                ],
+                correct: 0
+            },
+            {
+                q: "What does 'Zion' represent in Rastafari?",
+                options: [
+                    "A place in Jamaica",
+                    "Africa / Ethiopia as the promised land and spiritual home",
+                    "A type of food",
+                    "A reggae festival"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which herb is considered sacred and used as a sacrament in Rastafari?",
+                options: [
+                    "Tobacco",
+                    "Cannabis (Ganja)",
+                    "Alcohol",
+                    "Coffee"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does the Lion of Judah symbolise?",
+                options: [
+                    "Strength, royalty, and the lineage of Haile Selassie",
+                    "A type of music",
+                    "A Jamaican animal",
+                    "A football team"
+                ],
+                correct: 0
+            },
+            {
+                q: "Which Rastafari mansion is known for wearing turbans and living communally?",
+                options: [
+                    "Nyabinghi",
+                    "Twelve Tribes",
+                    "Bobo Shanti",
+                    "Ethiopian Orthodox"
+                ],
+                correct: 2
+            },
+            {
+                q: "What is the meaning of 'Jah'?",
+                options: [
+                    "A greeting",
+                    "The name of God in Rastafari (short for Jehovah)",
+                    "A type of drum",
+                    "A place in Africa"
+                ],
+                correct: 1
+            },
+            {
+                q: "Who wrote the famous speech 'War' that Bob Marley turned into a song?",
+                options: [
+                    "Marcus Garvey",
+                    "Haile Selassie I",
+                    "Peter Tosh",
+                    "Burning Spear"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does 'livity' mean in Rastafari?",
+                options: [
+                    "A type of music",
+                    "A way of life in accordance with natural and spiritual laws",
+                    "A religious book",
+                    "A hairstyle"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which organisation did Marcus Garvey found?",
+                options: [
+                    "United Negro Improvement Association (UNIA)",
+                    "Black Panther Party",
+                    "NAACP",
+                    "Rastafari Federation"
+                ],
+                correct: 0
+            },
+            {
+                q: "What is 'Nyabinghi'?",
+                options: [
+                    "A type of food",
+                    "A sacred drumming ceremony and order in Rastafari",
+                    "A reggae song",
+                    "A place in Ethiopia"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does the red in the Rastafari flag represent?",
+                options: [
+                    "The sun",
+                    "The blood of the martyrs and the struggles of the people",
+                    "The vegetation",
+                    "The royalty"
+                ],
+                correct: 1
+            },
+            {
+                q: "What is the ultimate goal of Rastafari according to most teachings?",
+                options: [
+                    "To become rich and famous",
+                    "Repatriation to Africa / Zion and spiritual liberation",
+                    "To convert everyone to Christianity",
+                    "To create a new political party"
+                ],
+                correct: 1
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = [];
+        
+        function startTest() {
+            document.getElementById('test-section').classList.remove('hidden');
+            document.getElementById('test-section').scrollIntoView({ behavior: 'smooth' });
+            currentQuestion = 0;
+            score = 0;
+            userAnswers = [];
+            showQuestion();
+        }
+        
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question-text').innerHTML = q.q;
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = `option border-2 border-amber-600 p-4 cursor-pointer flex items-center gap-3`;
+                div.innerHTML = `
+                    <div class="w-8 h-8 flex-shrink-0 border-2 border-amber-400 flex items-center justify-center font-bold">
+                        ${String.fromCharCode(65 + index)}
+                    </div>
+                    <div class="flex-1">${option}</div>
+                `;
+                div.onclick = () => selectOption(div, index);
+                container.appendChild(div);
+            });
+            
+            document.getElementById('next-btn').classList.remove('hidden');
+            document.getElementById('submit-btn').classList.add('hidden');
+            
+            updateScore();
+        }
+        
+        function selectOption(element, index) {
+            // Deselect all
+            document.querySelectorAll('#options-container > div').forEach(el => {
+                el.classList.remove('selected', 'border-amber-400');
+                el.classList.add('border-amber-600');
+            });
+            
+            // Select current
+            element.classList.add('selected', 'border-amber-400');
+            element.classList.remove('border-amber-600');
+            
+            // Store answer
+            userAnswers[currentQuestion] = index;
+            
+            // Enable next
+            document.getElementById('next-btn').disabled = false;
+        }
+        
+        function nextQuestion() {
+            if (userAnswers[currentQuestion] === undefined) {
+                alert("Please select an answer before continuing.");
+                return;
+            }
+            
+            if (userAnswers[currentQuestion] === questions[currentQuestion].correct) {
+                score++;
+            }
+            
+            currentQuestion++;
+            
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                document.getElementById('next-btn').classList.add('hidden');
+                document.getElementById('submit-btn').classList.remove('hidden');
+            }
+            
+            updateScore();
+        }
+        
+        function updateScore() {
+            document.getElementById('score-display').textContent = `${score}/${currentQuestion}`;
+        }
+        
+        function submitTest() {
+            // Calculate final score if last question wasn't counted
+            if (currentQuestion === questions.length && userAnswers[currentQuestion] !== undefined) {
+                if (userAnswers[currentQuestion] === questions[currentQuestion].correct) {
+                    score++;
+                }
+            }
+            
+            showResults();
+        }
+        
+        function showResults() {
+            document.getElementById('test-section').classList.add('hidden');
+            document.getElementById('results-section').classList.remove('hidden');
+            
+            const percentage = Math.round((score / 20) * 100);
+            document.getElementById('final-score').innerHTML = `${score}<span class="text-2xl">/20</span>`;
+            
+            const messageEl = document.getElementById('pass-fail-message');
+            const certBtn = document.getElementById('certificate-btn');
+            const reviewEl = document.getElementById('wrong-answers-review');
+            
+            if (score >= 18) {
+                messageEl.innerHTML = `🎉 BLESS UP! YOU PASSED!<br><span class="text-xl">You are now a CERTIFIED RASTAFARI</span>`;
+                messageEl.className = 'text-3xl font-bold mb-8 text-emerald-400';
+                certBtn.classList.remove('hidden');
+                reviewEl.classList.add('hidden');
+            } else {
+                messageEl.innerHTML = `KEEP STUDYING, KING/QUEEN<br><span class="text-xl">You scored ${percentage}% — 90% needed to pass</span>`;
+                messageEl.className = 'text-3xl font-bold mb-8 text-red-400';
+                certBtn.classList.add('hidden');
+                
+                // Show wrong answers
+                showWrongAnswers();
+                reviewEl.classList.remove('hidden');
+            }
+            
+            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showWrongAnswers() {
+            const container = document.getElementById('wrong-answers-list');
+            container.innerHTML = '';
+            
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correct) {
+                    const div = document.createElement('div');
+                    div.className = 'bg-zinc-950 border border-red-600 p-4 text-sm';
+                    div.innerHTML = `
+                        <div class="font-bold mb-1">Q${index + 1}: ${q.q}</div>
+                        <div class="text-red-400">Your answer: ${q.options[userAnswers[index]]}</div>
+                        <div class="text-emerald-400">Correct: ${q.options[q.correct]}</div>
+                    `;
+                    container.appendChild(div);
+                }
+            });
+        }
+        
+        function showCertificate() {
+            const modal = document.getElementById('certificate-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Set date
+            const date = new Date();
+            document.getElementById('cert-date').textContent = date.toLocaleDateString('en-GB', { 
+                day: 'numeric', month: 'long', year: 'numeric' 
+            });
+            
+            // Random certificate number
+            document.getElementById('cert-number').textContent = 
+                Math.floor(100000 + Math.random() * 900000);
+        }
+        
+        function hideCertificate() {
+            const modal = document.getElementById('certificate-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function printCertificate() {
+            const name = document.getElementById('certificate-name').value.trim() || 'BELOVED CHILD OF JAH';
+            const originalName = document.getElementById('certificate-name').placeholder;
+            
+            // Temporarily set the name for printing
+            document.getElementById('certificate-name').style.border = 'none';
+            document.getElementById('certificate-name').value = name;
+            
+            window.print();
+            
+            // Restore
+            setTimeout(() => {
+                document.getElementById('certificate-name').style.borderBottom = '2px solid #fcd116';
+                document.getElementById('certificate-name').value = '';
+                document.getElementById('certificate-name').placeholder = originalName;
+            }, 1000);
+        }
+        
+        function restartTest() {
+            document.getElementById('results-section').classList.add('hidden');
+            document.getElementById('test-section').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+        
+        // Keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('certificate-modal');
+                if (!modal.classList.contains('hidden')) {
+                    hideCertificate();
+                }
+            }
+        });
+        
+        // Initialize
+        console.log('%c[Rastafari University] Online Images Version Loaded', 'color:#fcd116');
+    </script>
+</body>
+</html>
